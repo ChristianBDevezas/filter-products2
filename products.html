@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Selected Products</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header-products" class="header">
+    <div class="container">
+      <!-- User button -->
+      <button id="userButton" class="relative">
+        <span class="user-icon">
+          <i id="user-login" class="fa-solid fa-user"></i>
+        </span>
+        <h4 class="user-text">Hi, <span id="login">Login</span></h4>
+      </button>
+
+      <nav class="navigation">
+        <!-- ul>li*3>a -->
+        <ul>
+          <li><a href="index.html" class="navigation-link">Home</a></li>
+          <li><a href="products.html" class="navigation-link active">Product</a></li>
+          <li><a href="contact.html" class="navigation-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="total">
+        Items: <span class="quantity"></span>
+        <br>
+        Total: US$ <span class="total-value"></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+    <main id="main-products" class="main">
+      <h2 class="main-title">Selected Product</h2>
+
+      <div class="container products-container">
+        <!-- Products wrapper -->
+        <div class="products-wrapper">
+          <!-- <article class="item">
+            <div class="item-img">
+              <img src="./images/playstation_5.png" alt="Sony Playstation 5">
+              <span class="remove">Remove Product</span>
+            </div>
+            
+            <div class="item-description">
+              <p>Playstation 5</p>
+              <strong>$499,99</strong>
+            </div>
+
+            <div class="item-sub-add">
+              <i class="fa-solid fa-minus"></i>
+              <i class="fa-solid fa-plus"></i>
+            </div>
+          </article>-->
+        </div>
+      </div>
+    </main>
+
+    <!-- Modal -->
+    <div class="modal"></div>
+
+    <!-- Link to top -->
+    <a class="link-top" href="#main-products">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!--SCRIPT-->
+    <script src="./js/products.js" type="module"></script>
+    <script src="./js/modal.js"></script>
+</body>
+</html>

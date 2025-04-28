@@ -1,0 +1,88 @@
+const products = [
+    {
+      id: 0,
+      url: 'images/playstation_5.png',
+      name: 'Sony Playstation 5',
+      type: 'games',
+      price: 499.99,
+    },
+    {
+      id: 1,
+      url: 'images/samsung_galaxy.png',
+      name: 'Samsung Galaxy',
+      type: 'smartphones',
+      price: 399.99,
+    },
+    {
+      id: 2,
+      url: 'images/cannon_eos_camera.png',
+      name: 'Cannon EOS Camera',
+      type: 'cameras',
+      price: 749.99,
+    },
+    {
+      id: 3,
+      url: 'images/sony_a7_camera.png',
+      name: 'Sony A7 Camera',
+      type: 'cameras',
+      price: 1999.99,
+    },
+    {
+      id: 4,
+      url: 'images/lg_tv.png',
+      name: 'LG TV',
+      type: 'televisions',
+      price: 799.99,
+    },
+    {
+      id: 5,
+      url: 'images/nintendo_switch.png',
+      name: 'Nintendo Switch',
+      type: 'games',
+      price: 299.99,
+    },
+    {
+      id: 6,
+      url: 'images/xbox_series_x.png',
+      name: 'Xbox Series X',
+      type: 'games',
+      price: 499.99,
+    },
+    {
+      id: 7,
+      url: 'images/samsung_tv.png',
+      name: 'Samsung TV',
+      type: 'televisions',
+      price: 1099.99,
+    },
+    {
+      id: 8,
+      url: 'images/google_pixel.png',
+      name: 'Google Pixel',
+      type: 'smartphones',
+      price: 499.99,
+    },
+    {
+      id: 9,
+      url: 'images/sony_zv1f_camera.png',
+      name: 'Sony ZV1F Camera',
+      type: 'cameras',
+      price: 799.99,
+    },
+    {
+      id: 10,
+      url: 'images/toshiba_tv.png',
+      name: 'Toshiba TV',
+      type: 'televisions',
+      price: 499.99,
+    },
+    {
+      id: 11,
+      url: 'images/iphone_14.png',
+      name: 'iPhone 14',
+      type: 'smartphones',
+      price: 999.99,
+    },
+];
+
+export default products;

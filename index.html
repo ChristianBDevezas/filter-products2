@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="./css/style.css">
+    <title>Products Filtering</title>
+</head>
+<body>
+  <!-- HEADER -->
+  <header id="header-home" class="header">
+    <div class="container">
+      <!-- User button -->
+      <button id="userButton" class="relative">
+        <span class="user-icon">
+          <i id="user-login" class="fa-solid fa-user"></i>
+        </span>
+        <h4 class="user-text">Hi, <span id="login">Login</span></h4>
+      </button>
+
+      <!-- Navigation menu -->
+      <nav class="navigation">
+        <ul>
+          <li><a href="index.html" class="navigation-link active">Home</a></li>
+          <li><a href="products.html" class="navigation-link">Product</a></li>
+          <li><a href="contact.html" class="navigation-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Search field -->
+      <div id="search-field" class="relative">
+        <input type="text" id="search" placeholder="Search products" />          
+        <span class="search-icon">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </span>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN -->
+  <main id="main" class="main">
+    <div class="container">
+      <div class="filter">
+        <h2>Categories</h2>
+
+        <div id="filters-container">
+          <div>
+            <input type="checkbox" class="check" id="cameras" />
+            <label for="cameras">Cameras</label>
+          </div>
+
+          <div>
+            <input type="checkbox" class="check" id="smartphones" />
+            <label for="smartphones">Smartphones</label>
+          </div>
+
+          <div>
+            <input type="checkbox" class="check" id="games" />
+            <label for="games">Games</label>
+          </div>
+
+          <div>
+            <input type="checkbox" class="check" id="televisions" />
+            <label for="televisions">Televisions</label>
+          </div>
+        </div>
+      </div>
+
+      <!-- Products wrapper -->
+      <div class="products-wrapper">
+        <!-- <article class="item">
+          <div class="item-img">
+            <img src="./images/playstation_5.png" alt="Sony Playstation 5">
+            <span class="select-item">Add Product</span>
+          </div>
+            
+          <div class="item-description">
+            <p>Playstation 5</p>
+            <strong>$499</strong>
+          </div>
+        </article> -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Link to top -->
+  <a class="link-top" href="#main">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Modal -->
+  <div class="modal">
+    <!-- <div class="modal-login">
+      <i class="fa-solid fa-x modal-close"></i>add
+
+      <div class="modal-item">
+        <label for="name">User name</label>
+        <input type="text" name="name" id="name" placeholder="Type your user name">
+      </div>
+
+      <div class="modal-item">
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password" placeholder="Type your password">
+      </div>
+
+      <div class="modal-item">
+        <input type="submit" id="submit" value="Log In">
+      </div>
+    </div> -->
+  </div>
+
+  <!--SCRIPTS-->
+  <script src="./js/script.js" type="module"></script>
+  <script src="./js/modal.js"></script>
+</body>
+</html>
