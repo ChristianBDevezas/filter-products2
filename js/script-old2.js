@@ -96,19 +96,23 @@ products.forEach((product) => {
 
 // Create product element
 function createProductElement(product) {
-  const productElement = document.createElement('div');
+  const productElement = document.createElement('article');
   productElement.className = 'item';
 
   // productElement.innerHTML = `
-  //   <div>
+  //   <div class="item-img">
   //      <img src="${product.url}" alt="${product.name}" />
   //      <span class="status">Add To Cart</span>
   //   </div>
-  //   <p>${product.name}</p>
-  //   <strong>$${product.price.toLocaleString()}</strong>
+
+  //   <div class="item-description">
+  //     <p>${product.name}</p>
+  //     <strong>$${product.price.toLocaleString()}</strong>
+  //   </div>
   // `;
 
-  const div = document.createElement("div");
+  const div1 = document.createElement("div");
+  div1.classList.add("item-img");
 
   const img = document.createElement("img");
   img.src = `${product.url}`;
@@ -119,49 +123,60 @@ function createProductElement(product) {
   span.classList.add("status");
   span.innerText = `Add To Cart`;
 
+  div1.appendChild(img);
+  div1.appendChild(span);
+
   const p = document.createElement("p");
   p.innerText = `${product.name}`;
 
   const strong = document.createElement("strong");
   strong.innerText = `${product.price.toLocaleString()}`;
 
-  div.appendChild(img);
-  div.appendChild(span);
+  const div2 = document.createElement("div");
+  div2.classList.add("item-description");
 
-  productElement.appendChild(div);
-  productElement.appendChild(p);
-  productElement.appendChild(strong);
+  div2.appendChild(p);
+  div2.appendChild(strong);
+
+  productElement.appendChild(div1);
+  productElement.appendChild(div2);
 
   productElement.querySelector('.status').addEventListener('click', addToCart);
 
   return productElement;
 }
 
-// using forEach to populate cards
+// // using forEach to populate cards
 // products.forEach((product) => {
 //   productsWrapper.innerHTML += `
-//     <div class="item">
-//       <div>
-//         <img src=${product.url} alt=${product.name} />
-//         <span class="status">Add To Cart</span>
-//       </div>
-//       <p>${product.name}</p>
-//       <strong>$${product.price.toLocaleString()}</strong>
-//     </div>
+//     <article class="item">
+//         <div class="item-img">
+//           <img src="${product.url}" alt="${product.name}">
+//           <span class="status">Add Product</span>
+//         </div>
+            
+//         <div class="item-description">
+//           <p>${product.name}</p>
+//           <strong>$${product.price.toLocaleString()}</strong>
+//         </div>
+//     </article>
 //   `;
 // });
 
-// using map to populate cards
+// // using map to populate cards
 // productsWrapper.innerHTML = products.map((product) => {
 //   return `
-//     <div class="item">
-//       <div>
-//         <img src=${product.url} alt=${product.name} />
-//         <span class="status">Add To Cart</span>
-//       </div>
-//       <p>${product.name}</p>
-//       <strong>$${product.price.toLocaleString()}</strong>
-//       </div>
+//     <article class="item">
+//         <div class="item-img">
+//           <img src="${product.url}" alt="${product.name}">
+//           <span class="status">Add Product</span>
+//         </div>
+            
+//         <div class="item-description">
+//           <p>${product.name}</p>
+//           <strong>$${product.price.toLocaleString()}</strong>
+//         </div>
+//     </article>
 //   `;
 // }).join("");
 
@@ -199,7 +214,7 @@ searchInput.addEventListener('input', filterProducts);
 function filterProducts() {
   // Get search term
   const searchTerm = searchInput.value.trim().toLowerCase();
-  // Get checked categories
+  // Get id of all checked categories 
   const checkedCategories = Array.from(checkElements).filter((check) => check.checked).map((check) => check.id);
   console.log(checkedCategories);
   
@@ -237,14 +252,14 @@ filtersContainerInputs.forEach((input, index) => {
     }
   });
 
-  filtersContainerLabels.forEach((label) => {
-    label.addEventListener('click', () => {
-      if(!label.classList.contains('color')) {
-        label.classList.add('color');
-      }
-      else {
-        label.classList.remove('color');
-      }
-    });
-  });
+  // filtersContainerLabels.forEach((label) => {
+  //   label.addEventListener('click', () => {
+  //     if(!label.classList.contains('color')) {
+  //       label.classList.add('color');
+  //     }
+  //     else {
+  //       label.classList.remove('color');
+  //     }
+  //   });
+  // });
 });

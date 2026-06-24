@@ -5,73 +5,103 @@ const elementId = localStorage.getItem("idItem");
 console.log(elementId);
 
 // get DOM elements
-const body = document.body;
 const title = document.querySelector(".main-title");
-const container = document.querySelector(".container");
 const productsWrapper = document.querySelector(".products-wrapper");
 
-// map method
+// // map method
 // const productsContainer = products.map((product) => {
 //     return `
-//         <div class="item">
-//             <div>
-//                 <img src="${product.url}" alt="Sony Playstation 5">
-//                 <span class="remove">Remove Item</span>
+//         <article class="item">
+//             <div class="item-img">
+//               <img src="${product.url}" alt="${product.name}">
+//               <span class="remove">Remove Product</span>
 //             </div>
-                  
-//             <p>${product.name}</p>
-//             <strong>${product.price}</strong>
-//         </div>
+            
+//             <div class="item-description">
+//               <p>${product.name}</p>
+//               <strong>${product.price}</strong>
+//             </div>
+
+//             <div class="item-sub-add">
+//               <i class="fa-solid fa-minus"></i>
+//               <i class="fa-solid fa-plus"></i>
+//             </div>
+//         </article>
 //     `
 // });
 
 // productsWrapper.innerHTML = productsContainer.join("");
 
-// for of loop
+// // for of loop
 // for(const product of products) {
 //     productsWrapper.innerHTML += `
-//         <div class="item">
-//             <div>
-//                 <img src="${product.url}" alt="Sony Playstation 5">
-//                 <span class="remove">Remove Item</span>
+//         <article class="item">
+//             <div class="item-img">
+//               <img src="${product.url}" alt="${product.name}">
+//               <span class="remove">Remove Product</span>
 //             </div>
-                  
-//             <p>${product.name}</p>
-//             <strong>${product.price}</strong>
-//         </div>
+            
+//             <div class="item-description">
+//               <p>${product.name}</p>
+//               <strong>${product.price}</strong>
+//             </div>
+
+//             <div class="item-sub-add">
+//               <i class="fa-solid fa-minus"></i>
+//               <i class="fa-solid fa-plus"></i>
+//             </div>
+//         </article>
 //     `;
 // }
 
 // forEach loop
 products.forEach((product) => {
-    const productElement = document.createElement('div');
+    const productElement = document.createElement('article');
     productElement.className = 'item';
 
-    const div = document.createElement("div");
+    const div1 = document.createElement("div");
+    div1.classList.add("item-img");
 
     const img = document.createElement("img");
     img.src = `${product.url}`;
     img.setAttribute("alt", `${product.name}`);
 
     const span = document.createElement("span");
-    span.classList.add("status");
-    span.innerText = `Add To Cart`;
-    span.setAttribute("id", product.id);
-    // productElement.querySelector('.status').addEventListener('click', addToCart);
+    span.classList.add("remove");
+    span.innerText = `Remove Product`;
     // span.addEventListener('click', addToCart);
+
+    div1.appendChild(img);
+    div1.appendChild(span);
+
+    const div2 = document.createElement("div");
+    div2.classList.add("item-description");
 
     const p = document.createElement("p");
     p.innerText = `${product.name}`;
 
     const strong = document.createElement("strong");
-    strong.innerText = `${product.price.toLocaleString()}`;
+    strong.innerText = `${product.price}`;
+    // strong.innerText = `${product.price.toLocaleString()}`;
 
-    div.appendChild(img);
-    div.appendChild(span);
+    div2.appendChild(p);
+    div2.appendChild(strong);
 
-    productElement.appendChild(div);
-    productElement.appendChild(p);
-    productElement.appendChild(strong);
+    const div3 = document.createElement("div");
+    div3.classList.add("item-sub-add");
+
+    const icon1 = document.createElement("i");
+    icon1.classList.add("fa-solid", "fa-minus");
+
+    const icon2 = document.createElement("i");
+    icon2.classList.add("fa-solid", "fa-plus");
+
+    div3.appendChild(icon1);
+    div3.appendChild(icon2);
+
+    productElement.appendChild(div1);
+    productElement.appendChild(div2);
+    productElement.appendChild(div3);
 
     productsWrapper.appendChild(productElement);
 });

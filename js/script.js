@@ -24,12 +24,15 @@ function createProductElement(product) {
   productElement.className = 'item';
 
   // productElement.innerHTML = `
-  //   <div>
+  //   <div class="item-img">
   //      <img src="${product.url}" alt="${product.name}" />
-  //      <span class="select-item">Add To Cart</span>
+  //      <span class="status">Add To Cart</span>
   //   </div>
-  //   <p>${product.name}</p>
-  //   <strong>$${product.price.toLocaleString()}</strong>
+
+  //   <div class="item-description">
+  //     <p>${product.name}</p>
+  //     <strong>$${product.price.toLocaleString()}</strong>
+  //   </div>
   // `;
 
   const div1 = document.createElement("div");
@@ -77,11 +80,12 @@ function filterProducts() {
   // Get search term
   const searchTerm = searchInput.value.trim().toLowerCase();
   
-  // Get checked categories
+  // Get all checked categories
   // const checkedCategories = Array.from(checkElements).filter((check) => check.checked).map((check) => check.id);
   const checkedCategories = Array.from(checkElements).filter((check) => check.checked);
   console.log(checkedCategories);
-
+  
+  // Get id of checked categories
   const checkedCategoriesId = checkedCategories.map((check) => check.id);
   console.log(checkedCategoriesId);
   
