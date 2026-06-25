@@ -168,7 +168,7 @@ function calcCart() {
     let addedProductPrice = 0;
     let productQuantity = 0;
 
-    for(let product  of cart.products) {
+    for(let product of cart.products) {
         if(product.id === selectedElementId) {
             addedProductPrice += product.price;
             productQuantity++;

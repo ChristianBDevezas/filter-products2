@@ -1,3 +1,27 @@
+// export function createCartOfSelectedProduct() {
+//     let cartItems = localStorage.getItem("cartItems");
+//     if(cartItems === null) {
+//         localStorage.setItem("cartItems", "{}");
+//     }
+// }
+
+// export function getCartOfSelectedProduct() {
+//     createCartOfSelectedProduct();
+//     let cartItems = localStorage.getItem("cartItems");
+
+//     return JSON.parse(cartItems);
+//     // return {}
+//     // return {1: {id: 1, quant: 3}}
+// }
+
+// export function updateQuantityOfSelectedProduct(id, quant) {
+//     let cartItems = getCartOfSelectedProduct();
+
+//     if(cartItems[id] === undefined) {
+//         cartItems[id] = {id:id, quant:0};
+//     }
+// }
+
 export function setItemIdToLocalStorage(idValue) {
     return localStorage.setItem("idItem", idValue);
 }
