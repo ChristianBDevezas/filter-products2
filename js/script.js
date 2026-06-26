@@ -149,6 +149,7 @@ function selectItem(e) {
   console.log(idElement);
 
   const parentSpanElement = spanElement.parentElement;
+  // Nullish Coalescing Operator
   let preparedPriceValue = parentSpanElement.nextElementSibling.firstChild.nextElementSibling.innerText??"0";
 
   preparedPriceValue = preparedPriceValue.replace(".", "").replace(",", ".");

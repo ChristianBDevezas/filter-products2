@@ -116,6 +116,7 @@ let cart;
 if(localStorageCart) {
     cart = JSON.parse(localStorageCart);
 }
+// if cart doesn't exist in localstorage, set an empty array for products property and 0 for total property
 else {
     cart = {
         products: [],
@@ -168,6 +169,7 @@ function calcCart() {
     let addedProductPrice = 0;
     let productQuantity = 0;
 
+    // loop the cart.products set in localstorage
     for(let product of cart.products) {
         if(product.id === selectedElementId) {
             addedProductPrice += product.price;
